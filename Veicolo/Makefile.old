@@ -6,6 +6,7 @@ TARGET=veicolo # define the name of the executable
 SOURCES=main.cpp veicolo.cpp autoveicolo.cpp
 CFLAGS=-O2
 LFLAGS=-lm
+FOLDER=build
 
 ################################################################################
 ### DO NOT EDIT THE FOLLOWING LINES ############################################
@@ -17,8 +18,8 @@ OBJS=$(OBJSC:.cpp=.o)
 # the target is obtained linking all .o files
 all: $(SOURCES) $(TARGET)
 
-$(TARGET): $(OBJS)
-	$(CC) $(LFLAGS) $(OBJS) -o $(TARGET)
+	/out/$(TARGET): /out/$(OBJS)
+		$(CC) $(LFLAGS) $(OBJS) -o /out/$(TARGET)
 
 purge: clean
 	rm -f $(TARGET)
